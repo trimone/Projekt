@@ -1,13 +1,12 @@
-﻿cl : Befehlszeile warning D9035: Die Option "clr:pure" ist veraltet und wird in einer der nächsten Versionen entfernt.
-  VorlageWindowsForm.cpp
-c:\users\pithl\onedrive\desktop\_techniker projekt\aktuell\gui\techniker_projekt\vorlagewindowsform\currentsource.h(36): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-c:\users\pithl\onedrive\desktop\_techniker projekt\aktuell\gui\techniker_projekt\vorlagewindowsform\currentsource.h(37): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
-c:\users\pithl\onedrive\desktop\_techniker projekt\aktuell\gui\techniker_projekt\vorlagewindowsform\form1.h(220): warning C4101: "fehler2": Unreferenzierte lokale Variable
-c:\users\pithl\onedrive\desktop\_techniker projekt\aktuell\gui\techniker_projekt\vorlagewindowsform\form1.h(234): warning C4101: "fehler1": Unreferenzierte lokale Variable
-c:\users\pithl\onedrive\desktop\_techniker projekt\aktuell\gui\techniker_projekt\vorlagewindowsform\form1.h(254): warning C4101: "sendtxt": Unreferenzierte lokale Variable
-c:\users\pithl\onedrive\desktop\_techniker projekt\aktuell\gui\techniker_projekt\vorlagewindowsform\form1.h(274): warning C4965: Implizites Boxing mit ganzer Zahl 0. Verwenden Sie "nullptr" oder eine explizite Umwandlung.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: Das Zwischenverzeichnis (Debug\) enthält freigegebene Dateien aus einem anderen Projekt (VorlageWindowsForm.vcxproj). Dies kann zu einem falschen Bereinigungs- und Neuerstellungsverhalten führen.
 cl : Befehlszeile warning D9035: Die Option "clr:pure" ist veraltet und wird in einer der nächsten Versionen entfernt.
-  .NETFramework,Version=v4.0.AssemblyAttributes.cpp
+  VorlageWindowsForm.cpp
+c:\users\pithl\onedrive\dokumente\__fte\_techniker projekt\_reposetery\projekt\techniker_projekt\vorlagewindowsform\currentsource.h(36): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+c:\users\pithl\onedrive\dokumente\__fte\_techniker projekt\_reposetery\projekt\techniker_projekt\vorlagewindowsform\currentsource.h(37): warning C4244: "=": Konvertierung von "double" in "int", möglicher Datenverlust
+c:\users\pithl\onedrive\dokumente\__fte\_techniker projekt\_reposetery\projekt\techniker_projekt\vorlagewindowsform\form1.h(228): warning C4101: "fehler2": Unreferenzierte lokale Variable
+c:\users\pithl\onedrive\dokumente\__fte\_techniker projekt\_reposetery\projekt\techniker_projekt\vorlagewindowsform\form1.h(242): warning C4101: "fehler1": Unreferenzierte lokale Variable
+c:\users\pithl\onedrive\dokumente\__fte\_techniker projekt\_reposetery\projekt\techniker_projekt\vorlagewindowsform\form1.h(262): warning C4101: "sendtxt": Unreferenzierte lokale Variable
+c:\users\pithl\onedrive\dokumente\__fte\_techniker projekt\_reposetery\projekt\techniker_projekt\vorlagewindowsform\form1.h(282): warning C4965: Implizites Boxing mit ganzer Zahl 0. Verwenden Sie "nullptr" oder eine explizite Umwandlung.
   AssemblyInfo.obj : /DEBUG:FASTLINK wird nicht unterstützt, wenn verwalteter Code vorhanden ist; Link wird mit /DEBUG:FULL neu gestartet
   AssemblyInfo.obj : MSIL-Modulgefunden; inkrementelles Verkn³pfen wird f³r MSIL deaktiviert; vollstõndiger Link wird durchgef³hrt
-  VorlageWindowsForm.vcxproj -> C:\Users\pithl\OneDrive\Desktop\_TECHNIKER PROJEKT\Aktuell\GUI\TECHNIKER_Projekt\Debug\VorlageWindowsForm.exe
+  VorlageWindowsForm.vcxproj -> C:\Users\pithl\OneDrive\Dokumente\__FTE\_TECHNIKER PROJEKT\_REPOSETERY\Projekt\TECHNIKER_Projekt\Debug\HF_GUI_Stromquelle.exe

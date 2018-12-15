@@ -55,7 +55,7 @@ public:
 		
 		if (id->Contains("Finess"))
 		{
-			count++;
+			//count++;
 		}
 
 		polarity = 1;
@@ -153,9 +153,10 @@ public:
 	{
 
 	}
+	*/
 	static int getCount()
 	{
-
-	}*/
+		return count;
+	}
 };
 

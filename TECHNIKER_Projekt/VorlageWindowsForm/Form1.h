@@ -22,6 +22,9 @@ namespace VorlageWindowsForm {
 	{
 	private: bool dataReceived;
 
+			 /// <summary>Array für mögliche Stromquelle anlegen</summary>
+			 array <CurrentSource^>^ currSource;	
+
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::TextBox^  eingabe;
 	private: System::Windows::Forms::TextBox^  ausgabe;
@@ -152,11 +155,16 @@ private: System::Void serialPort1_ErrorReceived(System::Object^  sender, System:
 private: void _COM_Abfragen()
 {
 	array <System::String^>^ ports;
+	// ports->Add(1);
 	array <System::String^>^ goodPorts = gcnew array <String^> (100);
 
 	String^ goodPort;
-	String^ _SN;
+	String^ _HF_ID;
 	String^ IDN = gcnew String("*idn?\r");
+
+
+
+
 	/*if (!serialPort1->IsOpen)
 	{
 		serialPort1->Open();
@@ -164,7 +172,7 @@ private: void _COM_Abfragen()
 
 	//ports = serialPort1->GetPortNames();
 
-	ports = System::IO::Ports::SerialPort::GetPortNames();
+	ports = System::IO::Ports::SerialPort::GetPortNames();	// ruft alle angeschlossenen COM ports ab
 
 	/*System::IO::Ports::SerialPort:
 		int x;
@@ -186,7 +194,7 @@ private: void _COM_Abfragen()
 
 
 			///	Data.Receive vielleicht nicht unbedingt notwendig => Fehler mit Exeption abfangen??
-			Sleep(100);
+			//Sleep(100);
 			//if (1)	// if (dataReceived)
 			try
 			{
@@ -194,24 +202,24 @@ private: void _COM_Abfragen()
 				
 				//_SN = serialPort1->ReadTo("\r");
 
-				_SN = serialPort1->ReadExisting();
+				_HF_ID = serialPort1->ReadExisting();
 
-				CurrentSource^ cur1 = gcnew CurrentSource(_SN);
-
-				if (serialPort1->ReadTo(" ") == "HighFinesse")	// Schneidet 'HighFinesse' aus !!
+				if( _HF_ID->Contains("HighFinesse BCS") || _HF_ID->Contains("HighFinesse UCS"))	// Wenn sich um eine Current Source von HF handelt, entwedet unipolar oder bipolar
+				//if (serialPort1->ReadTo(" ") == "HighFinesse")	// Schneidet 'HighFinesse' aus !!
 				//if (Convert::to(_SN[12]) == Convert::ToChar("HighFinesse"))	// Schneidet 'HighFinesse' aus !!
-
 				{
-					
+					// HF Current Source wurde gefunden
+					generateCurrArray(_HF_ID);
+					//currSource[1]->
 					//ports[i]->CopyTo(i,goodPorts,0,4);
 					goodPort = serialPort1->PortName;
-
+					
 					//goodPorts->Add();
 					goodPorts[j] = goodPort;
 					j++;
 
-					_SN = serialPort1->ReadExisting();
-					_SN = "HighFinesse " + _SN;
+					_HF_ID = serialPort1->ReadExisting();
+					_HF_ID = "HighFinesse " + _HF_ID;
 					
 				}
 				dataReceived = true;
@@ -272,6 +280,22 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void eingabe_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
 	if (e->KeyCode == Keys::Return)
 		button1_Click(0, e);
+}
+
+
+private: array <CurrentSource^>^ generateCurrArray (String^ _HF_ID)
+{
+	currSource->Resize(currSource, CurrentSource::getCount()+1);
+
+	//int arraySize = currSource->
+	//currSource = gcnew array<CurrentSource^>(CurrentSource::getCount() + 1); // = gcnew array<CurrentSource^>(9);
+	//CurrentSource^ cur1[10]; //= gcnew CurrentSource(_HF_ID);	// ein 'CurrentSource' Objekt wird erzeugt
+	
+	currSource[0] = gcnew CurrentSource{ _HF_ID };
+	//currSource = gcnew array<CurrentSource^>(add);
+
+	currSource[1] = gcnew CurrentSource;
+	return currSource;
 }
 };
 }
