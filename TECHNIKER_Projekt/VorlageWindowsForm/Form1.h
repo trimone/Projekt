@@ -1,7 +1,5 @@
 #pragma once
 // Hier gibt es eine Änderung !!
-
-// zweite Ähndereungshdhdshdshdh
 #include <time.h>
 #include <windows.h>			// Sleep
 
