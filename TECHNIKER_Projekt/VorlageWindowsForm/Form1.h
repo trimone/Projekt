@@ -1,5 +1,5 @@
 #pragma once
-
+// Hier gibt es eine Ã„nderung !!
 #include <time.h>
 #include <windows.h>			// Sleep
 
@@ -16,13 +16,13 @@ namespace VorlageWindowsForm {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Zusammenfassung für Form1
+	/// Zusammenfassung fÃ¼r Form1
 	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	private: bool dataReceived;
 
-			 /// <summary>Array für mögliche Stromquelle anlegen</summary>
+			 /// <summary>Array fÃ¼r mÃ¶gliche Stromquelle anlegen</summary>
 			 array <CurrentSource^>^ currSource;	
 
 	private: System::Windows::Forms::Button^  button1;
@@ -41,7 +41,7 @@ namespace VorlageWindowsForm {
 			dataping = 0;
 			InitializeComponent();
 			//
-			//TODO: Konstruktorcode hier hinzufügen.
+			//TODO: Konstruktorcode hier hinzufÃ¼gen.
 			//
 
 			_COM_Abfragen();
@@ -76,8 +76,8 @@ namespace VorlageWindowsForm {
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
-		/// Erforderliche Methode für die Designerunterstützung.
-		/// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+		/// Erforderliche Methode fÃ¼r die DesignerunterstÃ¼tzung.
+		/// Der Inhalt der Methode darf nicht mit dem Code-Editor geÃ¤ndert werden.
 		/// </summary>
 		void InitializeComponent(void)
 		{
@@ -138,7 +138,7 @@ private: System::Void serialPort1_DataReceived(System::Object^  sender, System::
 
 	ausgabe->Text = serialPort1->ReadLine();
 	
-	dataReceived = true;	// Muss als erstes ausgeführt werden, wenn Daten Empfangen werden !!
+	dataReceived = true;	// Muss als erstes ausgefÃ¼hrt werden, wenn Daten Empfangen werden !!
 	//dataping++;
 
 	//serialPort1->Close();
@@ -151,7 +151,7 @@ private: System::Void serialPort1_ErrorReceived(System::Object^  sender, System:
 
 
 /// <summary> 
-/// COM Ports abfragen und nach HF Gerät suchen </summary>
+/// COM Ports abfragen und nach HF GerÃ¤t suchen </summary>
 private: void _COM_Abfragen()
 {
 	array <System::String^>^ ports;
@@ -179,7 +179,7 @@ private: void _COM_Abfragen()
 		x = ports->Count;*/
 	
 	
-	try		// Klären, ob gehen tut!! (HERMANN)		.exe ohne VisualStudio, anderer PC
+	try		// KlÃ¤ren, ob gehen tut!! (HERMANN)		.exe ohne VisualStudio, anderer PC
 	{
 		int j = 0;
 		for (int i = 0 ; ports[i] != nullptr; i++)	/// ????
