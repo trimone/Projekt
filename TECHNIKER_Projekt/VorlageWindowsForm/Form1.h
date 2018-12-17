@@ -6,6 +6,8 @@
 #include "CurrentSource.h"
 #define RET ("\r")
 
+//hedfgh
+
 namespace VorlageWindowsForm {
 
 	using namespace System;
@@ -249,7 +251,7 @@ private: void _COM_Abfragen()
 
 
 	//serialPort1->po
-	ausgabe->Text = serialPort1->PortName;
+	//ausgabe->Text = serialPort1->PortName;
 
 	//serialPort1->Close();
 }
@@ -294,8 +296,18 @@ private: array <CurrentSource^>^ generateCurrArray (String^ _HF_ID)
 	currSource[0] = gcnew CurrentSource{ _HF_ID };
 	//currSource = gcnew array<CurrentSource^>(add);
 
+	currSource->Resize(currSource, CurrentSource::getCount() + 1);
+
 	currSource[1] = gcnew CurrentSource;
+
+
+	currSource->Resize(currSource, CurrentSource::getCount() + 1);
+
+	currSource[2] = gcnew CurrentSource;
 	return currSource;
+
+
+	
 }
 };
 }

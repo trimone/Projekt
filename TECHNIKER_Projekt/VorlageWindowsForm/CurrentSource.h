@@ -19,6 +19,7 @@ private:
 	String^ port;
 	bool enable;
 	static int count = 0;
+
 	array <wchar_t>^ BCS;// = gcnew array <wchar_t, 1>(3);
 
 	   	 
@@ -53,20 +54,44 @@ public:
 		deviceName = "Current Source " + Convert::ToString(count);
 		id->CopyTo(2, BCS, 0 ,3);
 		
-		if (id->Contains("Finess"))
+		if (id->Contains("BCS"))
 		{
 			//count++;
+			polarity = 1;
+		}
+		else //if (id->Contains("UCS"))
+			polarity = 0;
+
+
+
+		int length = id->Length;
+		String^ rest;
+		rest = "SD";
+
+		for (int i = 14; i < length ; i++)
+		{
+			while (id[i] != '/')
+			{
+				
+				//rest[i] = 'E';
+				rest=rest->Insert(0, "E");
+				
+			}
+
 		}
 
-		polarity = 1;
+		/*polarity = 1;
 		if (BCS[0] != 'B')
 		{
 			polarity = 0;
-		}
+		}*/
 
+
+		
 
 		// "HighFinesse BCS3/12 S/N1121347-20181212\r"
 		// "HighFinesse BCS255/255 S/N4294967295-20181212\r"
+
 		actCurrent = 0.0;
 		frequency = 0;
 		amplitude = 0;
